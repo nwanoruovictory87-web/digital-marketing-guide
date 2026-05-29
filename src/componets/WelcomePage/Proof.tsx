@@ -10,17 +10,25 @@ function Proof() {
     <div className="pl-5 pr-5 mt-5 flex justify-center ">
       <div className="rounded-md max-w-200 flex flex-col">
         <span className="flex justify-center ">
-          <h5 className="text-[1.1rem] pb-2 pt-2 border-b-2 border-[#6e6e0696] font-semibold text-gray-100">
-            Is Degital Marketing Real ?
-          </h5>
+          <span className="text-[1.1rem] pb-2 pt-2 border-b-2 border-[#6e6e0696] font-semibold text-gray-100">
+            <h2 className="text-center font-bold">
+              Can You Really Make Money with Digital Marketing?
+            </h2>
+          </span>
         </span>
         <span className="flex justify-center mt-3 text-center">
-          <h5 className="text-[1.1rem] text-gray-100 ">
-            Before we dive in to what <strong>Digital Marketing </strong> is and
-            how you can earn from it we got to answer a reel importent question.
-            A question i myself asked before i got started, is{" "}
-            <strong>Digital Marketing / Affilate Marketing </strong> Legit and
-            can i make money as a digital affiliate marketer ?
+          <h5 className="text-[1.1rem] text-gray-100">
+            Before we dive into what <strong>Digital Marketing</strong> is and
+            how you can earn from it, let's answer one of the most important
+            questions that almost every beginner asks:
+            <br />
+            <br />
+            Is <strong>Digital Marketing / Affiliate Marketing</strong> legit,
+            and can you really make money as a digital affiliate marketer?
+            <br />
+            <br />
+            The short answer is yes—but there are a few things you need to
+            understand first.
           </h5>
         </span>
         <span className="mt-3">
@@ -30,24 +38,26 @@ function Proof() {
           <img className="w-full h-full " src={proof2}></img>
         </span>
         <span className="flex justify-center mt-3 text-center">
-          <h5 className="text-[1.1rem] text-gray-100 ">
-            The above image is a google search that proves{" "}
-            <strong>Digital Marketing / Affilate Marketing </strong> i real and
-            still paying marketers massively till today
+          <h5 className="text-[1.1rem] text-gray-100">
+            The image above is a Google search result that proves{" "}
+            <strong>Digital Marketing / Affiliate Marketing</strong> is a
+            legitimate industry and continues to provide significant earning
+            opportunities for marketers worldwide.
           </h5>
         </span>
         <div className=" flex justify-center mt-5">
           <div className="bg-[#07078dde] rounded-md w-fit p-1 h-fit">
             <span className="flex justify-center ">
               <h5 className="text-[1.1rem] pb-2 pt-2 border-b-2 border-[#6e6e0696] font-semibold text-gray-100">
-                Testimonials From Digital Markerters
+                Success Stories from Digital Marketers
               </h5>
             </span>
             <span className="flex justify-center mt-3 text-center">
-              <h5 className="text-[1.1rem] text-gray-100 ">
-                The below are <strong>Digital / Affilate Marketers </strong>{" "}
-                whom made a decision to start an online business and are now
-                earning massively promoting digital products
+              <h5 className="text-[1.1rem] text-gray-100">
+                The success stories below are from{" "}
+                <strong>Digital / Affiliate Marketers</strong> who took the
+                first step, built their online businesses, and are now
+                generating income by promoting digital products.
               </h5>
             </span>
             <div className="flex gap-2 flex-wrap sm:grid sm:grid-cols-2 mt-3">
