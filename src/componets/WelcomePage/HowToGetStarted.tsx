@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import courseImg from "/images/course.png";
-import buyNowGif from "/gif/buyNow.gif";
+import whatIsAffilateMakertingImg from "/images/what-is-affiliate-marketing.webp";
 function HowToGetStarted() {
+  const urlNavigator = useNavigate();
+  function getEmail() {
+    const url = "/email/access";
+    urlNavigator(url, { replace: false });
+  }
   return (
     <div className="pl-5 pr-5 mt-5 flex justify-center ">
       <div className="rounded-md max-w-200 flex flex-col">
@@ -36,18 +42,20 @@ function HowToGetStarted() {
                 ></img>
               </span>
               <span className="w-full h-fit   pb-3 flex   pl-3 pr-3  mt-2">
-                <button className="w-full CTAShake  CTAShake-shadow  bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 rounded-lg text-xl">
+                <button
+                  className="w-full CTAShake  CTAShake-shadow  bg-blue-500 hover:bg-blue-600 text-black font-bold py-4 rounded-lg text-xl"
+                  onClick={getEmail}
+                >
                   Get Instant Access - ₦3,500
                 </button>
               </span>
             </div>
-
             <div className=" mt-3 sm:mt-0 bg-white sm:w-[50%] rounded-md ">
               <div className="h-full rounded-md  ">
                 <span className=" w-full h-full rounded-md">
                   <img
                     className="w-full h-full  object-fill rounded-md "
-                    src={buyNowGif}
+                    src={whatIsAffilateMakertingImg}
                   ></img>
                 </span>
               </div>

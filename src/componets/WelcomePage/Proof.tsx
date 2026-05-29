@@ -1,9 +1,13 @@
 import proof1 from "/images/googleS1.png";
 import proof2 from "/images/googleS2.png";
-import proof4 from "/images/Sarah-A.jpeg";
+import proof4 from "/images/proof12.jpg";
 import proof5 from "/images/Blessing-k.jpeg";
 import proof6 from "/images/kassy.jpg";
 import proof7 from "/images/od.png";
+import proof8 from "/images/1.png";
+import proof9 from "/images/2.png";
+import proof10 from "/images/4.png";
+import proof11 from "/images/5.png";
 
 function Proof() {
   return (
@@ -72,6 +76,18 @@ function Proof() {
               </span>
               <span className="w-full h-full">
                 <img className="w-full h-full" src={proof4}></img>
+              </span>
+              <span className="w-full h-full">
+                <img className="w-full h-full" src={proof11}></img>
+              </span>
+              <span className="w-full h-full">
+                <img className="w-full h-full" src={proof10}></img>
+              </span>
+              <span className="w-full h-full">
+                <img className="w-full h-full" src={proof9}></img>
+              </span>
+              <span className="w-full h-full">
+                <img className="w-full h-full" src={proof8}></img>
               </span>
             </div>
           </div>
