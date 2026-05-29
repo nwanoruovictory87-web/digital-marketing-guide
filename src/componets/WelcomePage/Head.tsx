@@ -29,7 +29,7 @@ function Head() {
           </span>
         </span>
         <div className="flex justify-center">
-          <span className="block w-fit mt-5 h-fit p-2 pl-5 pr=5 rounded-md max-w-200 text-center bg-[#6e6e0696]">
+          <span className="block w-fit mt-5 h-fit p-2 pl-5 pr-5 rounded-md max-w-200 text-center bg-[#6e6e0696]">
             <h2 className="text-[1.5rem] font-bold text-white">
               What If I Told You That You Could Be Earning ₦100,000–₦400,000 Per
               Month?

@@ -15,7 +15,7 @@ function ThankYouPage() {
           </span>
         </span>
         <div className="flex  justify-center ">
-          <span className="  w-fit mt-5 h-fit p-2 pl-5 pr=5 rounded-md max-w-200 text-center bg-[#6e6e0696]">
+          <span className="  w-fit mt-5 h-fit p-2 pl-5 pr-5 rounded-md max-w-200 text-center bg-[#6e6e0696]">
             <h2 className="text-[1.5rem] font-bold text-white">
               One Last Step Before You Get Access
             </h2>
