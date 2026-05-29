@@ -1,6 +1,6 @@
 import proof1 from "/images/googleS1.png";
 import proof2 from "/images/googleS2.png";
-import proof4 from "/images/Sarah-A.jpg";
+import proof4 from "/images/Sarah-A.jpeg";
 import proof5 from "/images/Blessing-k.jpeg";
 import proof6 from "/images/kassy.jpg";
 import proof7 from "/images/od.png";

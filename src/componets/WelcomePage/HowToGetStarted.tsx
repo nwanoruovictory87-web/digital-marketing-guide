@@ -36,7 +36,7 @@ function HowToGetStarted() {
                 ></img>
               </span>
               <span className="w-full h-fit   pb-3 flex   pl-3 pr-3  mt-2">
-                <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 rounded-lg text-xl">
+                <button className="w-full CTAShake  CTAShake-shadow  bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 rounded-lg text-xl">
                   Get Instant Access - ₦3,500
                 </button>
               </span>

@@ -18,3 +18,29 @@ body {
   position: relative;
   width: 100%;
 }
+.CTAShake-shadow {
+  box-shadow: 4px 4px 4px rgba(66, 65, 65, 0.658);
+}
+.CTAShake {
+  cursor: pointer;
+  animation: shake 1s ease-in-out 2s infinite;
+  animation-delay: 3s;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  80%,
+  85% {
+    transform: translateX(-5px);
+  }
+  86%,
+  91% {
+    transform: translateX(5px);
+  }
+  92%,
+  98% {
+    transform: translateX(10px);
+  }
+}
