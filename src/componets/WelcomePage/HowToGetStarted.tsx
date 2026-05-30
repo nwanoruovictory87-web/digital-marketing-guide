@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Spinner from "../Spinner";
 import courseImg from "/images/course.png";
-import whatIsAffilateMakertingImg from "/images/what-is-affiliate-marketing.webp";
+import motivation from "/images/motivation.jpg";
 function HowToGetStarted() {
   const urlNavigator = useNavigate();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -62,7 +62,7 @@ function HowToGetStarted() {
                   <span className=" w-full h-full rounded-md">
                     <img
                       className="w-full h-full  object-fill rounded-md "
-                      src={whatIsAffilateMakertingImg}
+                      src={motivation}
                     ></img>
                   </span>
                 </div>
