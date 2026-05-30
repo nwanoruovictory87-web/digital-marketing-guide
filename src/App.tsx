@@ -5,6 +5,7 @@ const ThankYouPage = lazy(
   () => import("./componets/ThankYouAndPayment/ThankYouPage/ThankYouPage"),
 );
 const Payment = lazy(() => import("./componets/Payment/Payment"));
+const Pending = lazy(() => import("./componets/Payment/Pending"));
 import AdminDashbord from "./componets/admin/AdminDashbord";
 function App() {
   const routes = createBrowserRouter(
@@ -18,8 +19,12 @@ function App() {
         element: <ThankYouPage />,
       },
       {
-        path: "/dig/payment",
+        path: "/dmg/payment/:id",
         element: <Payment />,
+      },
+      {
+        path: "/payment/pending/dmg/:id",
+        element: <Pending />,
       },
       {
         path: "/admin/dashbord/true",
