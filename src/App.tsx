@@ -27,7 +27,7 @@ function App() {
         element: <Pending />,
       },
       {
-        path: "/admin/dashbord/true",
+        path: "/admin/dashboard/true",
         element: <AdminDashbord />,
       },
     ],
