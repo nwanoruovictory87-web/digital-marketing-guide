@@ -1,9 +1,45 @@
 import { useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
+
+type ServerEmailResponds = {
+  ok: boolean;
+  massage: string;
+  redirectUrl: string;
+};
 function ThankYouPage() {
   const urlNavigator = useNavigate();
-  function toPayment() {
-    const url = "/dig/payment";
-    urlNavigator(url, { replace: false });
+  const [onRequst, setOnRequst] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  async function toPayment() {
+    if (onRequst) return;
+    if (!inputRef.current?.value) return;
+    const userEmail = inputRef.current?.value.trim();
+    const isEmailValied = (e: string): boolean => {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    };
+    if (!isEmailValied(userEmail))
+      return alert("please enter in a valide email address");
+    const data = {
+      email: userEmail,
+    };
+    setOnRequst(true);
+    console.log(JSON.stringify(data));
+    try {
+      const url = "http://localhost:3000/email";
+      const requst = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const responds: ServerEmailResponds = await requst.json();
+      setOnRequst(false);
+      if (!responds.ok) return alert(responds.massage);
+      urlNavigator(responds.redirectUrl, { replace: true });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -25,7 +61,7 @@ function ThankYouPage() {
           <span className="flex flex-col text-center">
             <h5 className="text-[1.2rem] font-medium ">
               You're just one step away from accessing the complete Digital
-              Marketing & Affiliate Marketing Guide.
+              Marketing / Affiliate Marketing Guide.
             </h5>
             <h5 className="mt-3 text-[1rem]">
               Enter your best email address below. Once your payment is
@@ -38,7 +74,7 @@ function ThankYouPage() {
               <h5>What You'll Receive</h5>
             </span>
             <ul className="space-y-3 list-disc pl-6 text-[1.1rem]">
-              <li>Complete Digital Marketing & Affiliate Marketing Guide</li>
+              <li>Complete Digital Marketing / Affiliate Marketing Guide</li>
               <li>Step-by-Step Beginner Roadmap</li>
               <li>Access to 1,000+ Digital Products to Promote</li>
               <li>Proven Marketing Strategies</li>
@@ -63,6 +99,7 @@ function ThankYouPage() {
               <input
                 className="w-full h-16 max-w-100 bg-[#3a38389a] rounded-md pl-2 "
                 placeholder="Enter you Email exp victory@gmail.com"
+                ref={inputRef}
               ></input>
               <button
                 className="w-full mt-4  bg-blue-500 hover:bg-blue-600 text-black font-bold py-3 rounded-lg text-xl"

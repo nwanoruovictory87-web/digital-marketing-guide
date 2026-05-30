@@ -1,7 +1,14 @@
+import { useState } from "react";
+import PopValidation from "./PopValidation";
 function List() {
+  const [popUpControl, setPopUpControl] = useState<boolean>(false);
+  function popControl() {
+    setPopUpControl(!popUpControl);
+  }
   return (
     <div className="flex justify-center pl-5 pr-5 mt-10">
-      <div className="w-full max-w-200 bg-white rounded-md pt-7 pb-7 min-h-70 max-h-120 overflow-hidden">
+      <div className="w-full max-w-200 relative bg-white rounded-md pt-7 pb-7 min-h-70 max-h-120 overflow-hidden">
+        {popUpControl && <PopValidation popControl={setPopUpControl} />}
         <div className="pl-2 pr-2 flex flex-col gap-2">
           <span className="flex gap-2 text-[1.2rem] font-bold">
             <h5>Total Transactions: </h5>
@@ -23,8 +30,8 @@ function List() {
             <h5>Status</h5>
           </span>
         </div>
-        <div className="pl-2 pr-2 mt-2 pt-2 pb-5 grid grid-cols-1  gap-4 font-medium overflow-y-scroll max-h-100">
-          <span className="grid grid-cols-3 ">
+        <div className="pl-2 pr-2 mt-2 pt-2 pb-5 grid grid-cols-1  gap-4 font-medium overflow-y-scroll max-h-80">
+          <span className="grid grid-cols-3 " onClick={popControl}>
             <span className="overflow-hidden ">
               <h5>nwanoruovictory@gmail.com</h5>
             </span>
