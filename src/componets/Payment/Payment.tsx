@@ -66,7 +66,7 @@ function Payment() {
         email: id,
       };
       setIsloading(true);
-      const url = "http://localhost:3000/validate/payment";
+      const url = "http://localhost:3000/validate/payment/user";
       const validate = await fetch(url, {
         method: "POST",
         headers: {

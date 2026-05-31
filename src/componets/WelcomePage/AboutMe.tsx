@@ -41,7 +41,7 @@ function AboutMe() {
                 <h5>Inside this guide, you'll discover:</h5>
               </span>
 
-              <ul className="list-disc pl-5 mt-2 text-gray-200 font-medium text-[0.9rem] min-[400px]:text-[1.1rem] sm:text-[1.2rem]">
+              <ul className="list-disc pl-5 pr-5 mt-2 text-gray-200 font-medium text-[0.9rem] min-[400px]:text-[1.1rem] sm:text-[1.2rem] flex flex-col gap-2">
                 <li>
                   My personal journey and experience as an Affiliate Marketer
                   since 2023

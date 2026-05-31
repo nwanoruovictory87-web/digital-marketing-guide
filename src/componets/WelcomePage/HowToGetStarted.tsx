@@ -76,7 +76,7 @@ function HowToGetStarted() {
                 you'll get everything you need to start your Digital Marketing
                 and Affiliate Marketing journey with confidence.
               </h5>
-              <ul className="text-gray-100 text-[1.1rem] space-y-3 mt-4 list-disc pl-6">
+              <ul className="text-gray-100 text-[1.1rem] space-y-3 mt-4 list-disc pl-5 pr-5">
                 <li>
                   <strong>Complete Beginner-to-Advanced PDF Guide</strong> –
                   Learn Digital Marketing and Affiliate Marketing from the
