@@ -20,7 +20,8 @@ function NevBar() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const url = "http://localhost:3000/all/payment/transactions";
+        const url =
+          "https://digital-marketing-guide-backend.onrender.com/all/payment/transactions";
         const requst = await fetch(url, {
           method: "GET",
         });

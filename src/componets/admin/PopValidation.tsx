@@ -26,7 +26,8 @@ function PopValidation(props: PopControlAndData) {
     if (onRequst) return;
     setOnRequst(true);
     try {
-      const url = "http://localhost:3000/validate/payment/paid/admin";
+      const url =
+        "https://digital-marketing-guide-backend.onrender.com/validate/payment/paid/admin";
       const body = {
         paymentId: props.body._id,
       };
@@ -51,7 +52,8 @@ function PopValidation(props: PopControlAndData) {
     if (onRequst) return;
     setOnRequst(true);
     try {
-      const url = "http://localhost:3000/validate/payment/reject/admin";
+      const url =
+        "https://digital-marketing-guide-backend.onrender.com/validate/payment/reject/admin";
       const body = {
         paymentId: props.body._id,
       };
