@@ -29,7 +29,7 @@ function ThankYouPage() {
     setOnRequst(true);
     setIsloading(true);
     try {
-      const url = "http://localhost:3000/email";
+      const url = "https://digital-marketing-guide-backend.onrender.com/email";
       const requst = await fetch(url, {
         method: "POST",
         headers: {
