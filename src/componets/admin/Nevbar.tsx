@@ -45,7 +45,6 @@ function NevBar() {
     getData();
   }, [newRequst]);
   function newRequstControl() {
-    console.log("refresh");
     setRequst((prevRequst) => !prevRequst);
   }
   function pendingPayments() {

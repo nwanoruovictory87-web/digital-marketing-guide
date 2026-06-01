@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { lazy } from "react";
 import WelcomePage from "./componets/WelcomePage/WelcomePage";
 const ThankYouPage = lazy(
@@ -8,33 +8,28 @@ const Payment = lazy(() => import("./componets/Payment/Payment"));
 const Pending = lazy(() => import("./componets/Payment/Pending"));
 import AdminDashbord from "./componets/admin/AdminDashbord";
 function App() {
-  const routes = createBrowserRouter(
-    [
-      {
-        path: "/",
-        element: <WelcomePage />,
-      },
-      {
-        path: "/email/access",
-        element: <ThankYouPage />,
-      },
-      {
-        path: "/dmg/payment/:id",
-        element: <Payment />,
-      },
-      {
-        path: "/payment/pending/dmg/:id",
-        element: <Pending />,
-      },
-      {
-        path: "/admin/dashboard/true",
-        element: <AdminDashbord />,
-      },
-    ],
+  const routes = createHashRouter([
     {
-      basename: "/digital-marketing-guide/",
+      path: "/",
+      element: <WelcomePage />,
     },
-  );
+    {
+      path: "/email/access",
+      element: <ThankYouPage />,
+    },
+    {
+      path: "/dmg/payment/:id",
+      element: <Payment />,
+    },
+    {
+      path: "/payment/pending/dmg/:id",
+      element: <Pending />,
+    },
+    {
+      path: "/admin/dashboard/true",
+      element: <AdminDashbord />,
+    },
+  ]);
   return (
     <>
       <RouterProvider router={routes} />
