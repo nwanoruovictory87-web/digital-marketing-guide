@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Spinner from "../Spinner";
 type ServerPaymentResponds = {
   ok: boolean;
@@ -88,6 +88,7 @@ function Payment() {
       }
     } catch (error) {
       console.log(error);
+      toast.error(`Found :error`);
     }
   }
   return (
@@ -102,7 +103,6 @@ function Payment() {
           </span>
           <div className="flex justify-center ">
             <div className="max-w-150">
-              <Toaster position="top-center" />
               <div className="bg-white w-full flex flex-col  pt-7 pb-7 rounded-md mt-10 ">
                 <span className="pl-5 pr-5">
                   <h5 className="text-[1.3rem] font-semibold">Bank Transfer</h5>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 type Body = {
   _id: string;
   email: string;
@@ -41,6 +41,7 @@ function PopValidation(props: PopControlAndData) {
       const responds = await requst.json();
       if (!responds.ok)
         return (toast.error(responds.massage), setOnRequst(false));
+      toast.dismiss();
       toast.success(responds.massage);
       setOnRequst(false);
     } catch (error) {
@@ -75,7 +76,6 @@ function PopValidation(props: PopControlAndData) {
   }
   return (
     <>
-      <Toaster position="top-center" />
       <div className="flex justify-center w-full top-0  -ml-2 absolute z-10">
         <div className="bg-gray-100 pt-10 pb-10 pl-5 pr-5 flex justify-center w-full h-120 rounded-md">
           <div className="w-full max-w-100">

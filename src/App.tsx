@@ -7,6 +7,7 @@ const ThankYouPage = lazy(
 const Payment = lazy(() => import("./componets/Payment/Payment"));
 const Pending = lazy(() => import("./componets/Payment/Pending"));
 import AdminDashbord from "./componets/admin/AdminDashbord";
+import { Toaster } from "react-hot-toast";
 function App() {
   const routes = createHashRouter([
     {
@@ -32,6 +33,7 @@ function App() {
   ]);
   return (
     <>
+      <Toaster position="top-center" />
       <RouterProvider router={routes} />
     </>
   );

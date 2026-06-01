@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Spinner from "../../Spinner";
 
 type ServerEmailResponds = {
@@ -46,10 +46,14 @@ function ThankYouPage() {
       const responds: ServerEmailResponds = await requst.json();
       setOnRequst(false);
       if (!responds.ok)
-        return (toast.error(responds.massage), setIsloading(false));
+        return (
+          toast.dismiss(),
+          (toast.error(responds.massage), setIsloading(false))
+        );
       urlNavigator(responds.redirectUrl, { replace: true });
     } catch (error) {
-      console.log(error);
+      toast.dismiss();
+      toast.error(`Found :error`);
     }
   }
 
@@ -58,7 +62,6 @@ function ThankYouPage() {
       <div className=" transition-opacity">{isLoading && <Spinner />}</div>
       <div className="pl-5 pr-5 pt-10 pb-10 flex justify-center ">
         <div className="max-w-200">
-          <Toaster position="top-center" />
           <span className="flex  justify-center ">
             <span className="block w-fit p-1 pl-5 pr-5 bg-[#07078dde] rounded-md text-gray-100 font-inter text-[1.1rem] ">
               <h5>Email Access</h5>

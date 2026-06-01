@@ -1,4 +1,4 @@
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
 import List from "./List";
 type ProductsData = {
@@ -88,7 +88,6 @@ function NevBar() {
   }, [switchControl]);
   return (
     <>
-      <Toaster position="top-center" />
       <div className="flex pl-5 pr-5 justify-center w-full">
         <div className="w-full max-w-200 flex flex-col gap-4 mt-10">
           <span className="flex items-center gap-2">
