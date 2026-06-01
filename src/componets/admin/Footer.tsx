@@ -1,5 +1,5 @@
 type FecthRequst = {
-  setRequst: React.Dispatch<React.SetStateAction<boolean>>;
+  setRequst: () => void;
 };
 function Footer(props: FecthRequst) {
   return (
@@ -8,7 +8,7 @@ function Footer(props: FecthRequst) {
         <div className=" w-full flex ">
           <button
             className="rounded-lg pl-4 pr-4 p-2 text-[1.2rem] font-medium flex items-center gap-1 bg-[#07078dde] text-gray-200"
-            onClick={() => props.setRequst(true)}
+            onClick={props.setRequst}
           >
             Refresh
             <i className="fa fa-refresh"></i>

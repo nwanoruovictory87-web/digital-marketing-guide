@@ -11,6 +11,7 @@ type ProductsData = {
   __v: number;
 };
 function NevBar() {
+  const serverUrl = import.meta.env.VITE_BACKEND_API;
   const [staticProductsData, setStaticProductsData] = useState<ProductsData[]>(
     [],
   );
@@ -20,8 +21,7 @@ function NevBar() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const url =
-          "https://digital-marketing-guide-backend.onrender.com/all/payment/transactions";
+        const url = `${serverUrl}/all/payment/transactions`;
         const requst = await fetch(url, {
           method: "GET",
         });
@@ -33,14 +33,19 @@ function NevBar() {
           setProductsData(responds.data);
         }
         setStaticProductsData(responds.data);
-        toast.success(responds.massage);
+        if (responds.ok) {
+          toast.success(responds.massage);
+        }
       } catch (error) {
-        toast.error(`Found ${error}`);
+        if (error) {
+          toast.error(`Found ${error}`);
+        }
       }
     };
     getData();
   }, [newRequst]);
   function newRequstControl() {
+    console.log("refresh");
     setRequst((prevRequst) => !prevRequst);
   }
   function pendingPayments() {

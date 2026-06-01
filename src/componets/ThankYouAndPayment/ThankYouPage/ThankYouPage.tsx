@@ -9,6 +9,8 @@ type ServerEmailResponds = {
   redirectUrl: string;
 };
 function ThankYouPage() {
+  const serverUrl = import.meta.env.VITE_BACKEND_API;
+  const addminPass = import.meta.env.VITE_ADMIN_PASS;
   const urlNavigator = useNavigate();
   const [onRequst, setOnRequst] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -26,14 +28,14 @@ function ThankYouPage() {
     const data = {
       email: userEmail,
     };
-    if (userEmail === "123Newlife$869429@gmal.com") {
+    if (userEmail === `${addminPass}`) {
       urlNavigator("/admin/dashboard/true", { replace: true });
       return;
     }
     setOnRequst(true);
     setIsloading(true);
     try {
-      const url = "https://digital-marketing-guide-backend.onrender.com/email";
+      const url = `${serverUrl}/email`;
       const requst = await fetch(url, {
         method: "POST",
         headers: {

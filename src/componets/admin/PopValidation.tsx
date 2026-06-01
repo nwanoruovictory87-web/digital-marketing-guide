@@ -14,6 +14,7 @@ type PopControlAndData = {
   body: Body;
 };
 function PopValidation(props: PopControlAndData) {
+  const serverUrl = import.meta.env.VITE_BACKEND_API;
   const color = (type: string): string | undefined => {
     if (type === "inreview") return "blue";
     if (type === "pending") return "orange";
@@ -26,8 +27,7 @@ function PopValidation(props: PopControlAndData) {
     if (onRequst) return;
     setOnRequst(true);
     try {
-      const url =
-        "https://digital-marketing-guide-backend.onrender.com/validate/payment/paid/admin";
+      const url = `${serverUrl}/validate/payment/paid/admin`;
       const body = {
         paymentId: props.body._id,
       };
@@ -52,8 +52,7 @@ function PopValidation(props: PopControlAndData) {
     if (onRequst) return;
     setOnRequst(true);
     try {
-      const url =
-        "https://digital-marketing-guide-backend.onrender.com/validate/payment/reject/admin";
+      const url = `${serverUrl}/validate/payment/reject/admin`;
       const body = {
         paymentId: props.body._id,
       };

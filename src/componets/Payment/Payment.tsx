@@ -9,6 +9,7 @@ type ServerPaymentResponds = {
   redirectUrl: string;
 };
 function Payment() {
+  const serverUrl = import.meta.env.VITE_BACKEND_API;
   const urlNavigator = useNavigate();
   const { id } = useParams();
   const [min, setMin] = useState<number>(10);
@@ -66,8 +67,7 @@ function Payment() {
         email: id,
       };
       setIsloading(true);
-      const url =
-        "https://digital-marketing-guide-backend.onrender.com/validate/payment/user";
+      const url = `${serverUrl}/validate/payment/user`;
       const validate = await fetch(url, {
         method: "POST",
         headers: {
