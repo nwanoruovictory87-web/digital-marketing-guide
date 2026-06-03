@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Spinner from "../Spinner";
 import courseImg from "/images/course.png";
-import motivation from "/images/motivation.jpg";
+import whatIsAffilateMarketing from "/images/what-is-affiliate-marketing.webp";
 function HowToGetStarted() {
   const urlNavigator = useNavigate();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -48,12 +48,16 @@ function HowToGetStarted() {
                     src={courseImg}
                   ></img>
                 </span>
-                <span className="w-full h-fit   pb-3 flex   pl-3 pr-3  mt-2">
+                <span className="w-full h-fit   pb-3 flex gap-2  pl-3 pr-3  mt-2">
+                  <span className="w-full border-2 flex flex-col justify-center items-center text-[1.5rem]   font-bold py-4 rounded-lg text-xl">
+                    <h5>The old</h5>
+                    <h5 className="line-through ml-2 "> ₦7,500</h5>
+                  </span>
                   <button
-                    className="w-full CTAShake  CTAShake-shadow  bg-blue-500 hover:bg-blue-600 text-gray-200 font-bold py-4 rounded-lg text-xl"
+                    className="w-full CTAShake  CTAShake-shadow text-gray-50  bg-blue-500 hover:bg-blue-600  font-bold py-4 rounded-lg text-xl"
                     onClick={getEmail}
                   >
-                    Get Instant Access - ₦3,500
+                    Get Access ₦3,500
                   </button>
                 </span>
               </div>
@@ -62,7 +66,7 @@ function HowToGetStarted() {
                   <span className=" w-full h-full rounded-md">
                     <img
                       className="w-full h-full  object-fill rounded-md "
-                      src={motivation}
+                      src={whatIsAffilateMarketing}
                     ></img>
                   </span>
                 </div>

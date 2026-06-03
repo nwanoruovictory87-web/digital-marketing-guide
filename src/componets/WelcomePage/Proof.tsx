@@ -1,15 +1,26 @@
 import proof1 from "/images/googleS1.png";
 import proof2 from "/images/googleS2.png";
 import proof4 from "/images/proof12.jpg";
-import proof5 from "/images/Blessing-k.jpeg";
+import proof5 from "/videos/SelarIsReal.mp4";
 import proof6 from "/images/kassy.jpg";
 import proof7 from "/images/od.png";
 import proof8 from "/images/1.png";
-import proof9 from "/images/2.png";
+import proof9 from "/videos/proof3.mp4";
 import proof10 from "/images/4.png";
 import proof11 from "/images/5.png";
-
-function Proof() {
+type VideoControls = {
+  videoRef1: React.RefObject<HTMLVideoElement | null>;
+  videoRef2: React.RefObject<HTMLVideoElement | null>;
+  playRef1: React.RefObject<HTMLSpanElement | null>;
+  pauseRef1: React.RefObject<HTMLSpanElement | null>;
+  playRef2: React.RefObject<HTMLSpanElement | null>;
+  pauseRef2: React.RefObject<HTMLSpanElement | null>;
+  playVideo1: () => void;
+  pauseVideo1: () => void;
+  playVideo2: () => void;
+  pauseVideo2: () => void;
+};
+function Proof(props: VideoControls) {
   return (
     <div className="pl-5 pr-5 mt-5 flex justify-center ">
       <div className="rounded-md max-w-200 flex flex-col">
@@ -68,9 +79,31 @@ function Proof() {
               <span className="w-full h-full">
                 <img className="w-full h-full" src={proof6}></img>
               </span>
-              <span className="w-full h-full">
-                <img className="w-full h-full" src={proof5}></img>
-              </span>
+              <div className="relative w-full h-full">
+                <span className="w-full h-full">
+                  <video
+                    className="w-full h-full"
+                    src={proof5}
+                    ref={props.videoRef1}
+                  ></video>
+                </span>
+                <div className="w-full h-full absolute flex justify-center top-0 z-10">
+                  <span
+                    className="w-full h-full  flex justify-center items-center pointer-click  transition-all"
+                    onClick={props.playVideo1}
+                    ref={props.playRef1}
+                  >
+                    <span className="fa fa-play text-[3rem] text-[#d4d4d49f]  "></span>
+                  </span>
+                  <span
+                    className="w-full h-full  flex justify-center items-center pointer-none  transition-all"
+                    onClick={props.pauseVideo1}
+                    ref={props.pauseRef1}
+                  >
+                    <span className="fa fa-pause text-[3rem] text-[#d4d4d49f]  "></span>
+                  </span>
+                </div>
+              </div>
               <span className="w-full h-full">
                 <img className="w-full h-full" src={proof7}></img>
               </span>
@@ -83,9 +116,31 @@ function Proof() {
               <span className="w-full h-full">
                 <img className="w-full h-full" src={proof10}></img>
               </span>
-              <span className="w-full h-full">
-                <img className="w-full h-full" src={proof9}></img>
-              </span>
+              <div className="relative w-full h-full">
+                <span className="w-full h-full">
+                  <video
+                    className="w-full h-full"
+                    src={proof9}
+                    ref={props.videoRef2}
+                  ></video>
+                </span>
+                <div className="w-full h-full absolute flex justify-center top-0 z-10">
+                  <span
+                    className="w-full h-full  flex justify-center items-center pointer-click  transition-all"
+                    onClick={props.playVideo2}
+                    ref={props.playRef2}
+                  >
+                    <span className="fa fa-play text-[3rem] text-[#d4d4d49f]  "></span>
+                  </span>
+                  <span
+                    className="w-full h-full  flex justify-center items-center pointer-none  transition-all"
+                    onClick={props.pauseVideo2}
+                    ref={props.pauseRef2}
+                  >
+                    <span className="fa fa-pause text-[3rem] text-[#d4d4d49f]  "></span>
+                  </span>
+                </div>
+              </div>
               <span className="w-full h-full">
                 <img className="w-full h-full" src={proof8}></img>
               </span>
