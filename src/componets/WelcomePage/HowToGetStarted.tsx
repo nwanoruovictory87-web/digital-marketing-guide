@@ -50,14 +50,15 @@ function HowToGetStarted() {
                 </span>
                 <span className="w-full h-fit   pb-3 flex gap-2  pl-3 pr-3  mt-2">
                   <span className="w-full border-2 flex flex-col justify-center items-center text-[1.5rem]   font-bold py-4 rounded-lg text-xl">
-                    <h5>The old</h5>
+                    <h5>No longer</h5>
                     <h5 className="line-through ml-2 "> ₦7,500</h5>
                   </span>
                   <button
                     className="w-full CTAShake  CTAShake-shadow text-gray-50  bg-blue-500 hover:bg-blue-600  font-bold py-4 rounded-lg text-xl"
                     onClick={getEmail}
                   >
-                    Get Access ₦3,500
+                    <h5>Get Access</h5>
+                    <h5>₦3,500</h5>
                   </button>
                 </span>
               </div>

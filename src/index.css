@@ -23,21 +23,17 @@ body {
 }
 .CTAShake {
   cursor: pointer;
-  animation: shake 1s ease-in-out 2s infinite;
+  animation: shake 5s ease-in-out 5s infinite;
   animation-delay: 3s;
 }
 @keyframes shake {
-  0%,
-  100% {
+  25% {
+    transform: translateX(-107%);
+    background-color: rgba(234, 234, 238, 0.11);
+    color: rgba(255, 255, 255, 0.082);
+  }
+  90% {
     transform: translateX(0);
-  }
-  80%,
-  85% {
-    transform: translateX(-3px);
-  }
-  86%,
-  91% {
-    transform: translateX(3px);
   }
 }
 .spinner {
