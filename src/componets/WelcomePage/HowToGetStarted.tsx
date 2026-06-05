@@ -22,7 +22,7 @@ function HowToGetStarted() {
       <div className="fixed  bottom-30   h-0 flex justify-center w-full">
         <span className="pl-5 pr-5  flex w-full max-w-200 relative justify-end h-0 ">
           <span
-            className=" flex gap-2 items-center absolute z-10 -mt-10 p-3 h-fit w-fit  rounded-full cursor-pointer text-gray-200  bg-blue-500 hover:bg-blue-600  font-bold "
+            className=" flex gap-2 items-center absolute z-50 -mt-10 p-3 h-fit w-fit  rounded-full cursor-pointer text-gray-200  bg-blue-500 hover:bg-blue-600  font-bold "
             onClick={toPurchase}
           >
             <h5 className="text-[1.3rem] ">Get DMG</h5>
