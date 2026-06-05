@@ -3,7 +3,7 @@ import proof2 from "/images/googleS2.png";
 import proof4 from "/images/proof12.jpg";
 import proof5 from "/videos/SelarIsReal.mp4";
 import proof6 from "/images/kassy.jpg";
-import proof7 from "/images/od.png";
+import proof7 from "/images/2.png";
 import proof8 from "/images/1.png";
 import proof9 from "/videos/proof3.mp4";
 import proof10 from "/images/4.png";
