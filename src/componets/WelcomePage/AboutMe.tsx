@@ -1,8 +1,8 @@
 import myImage from "/images/victory.jpg";
 function AboutMe() {
   return (
-    <div className="flex justify-center">
-      <div className="pl-5 pr-5 mt-10 flex flex-col max-w-200">
+    <div className="flex justify-center mt-10">
+      <div className="pl-5 pr-5  flex flex-col max-w-200">
         <span>
           <span className="flex w-fit pb-2 border-b-2 border-[#7761c9] font-semibold text-[#6e6e06] text-[0.9rem] min-[400px]:text-[1.1rem] sm:text-[1.3rem]">
             <h5>About Me </h5>

@@ -30,7 +30,7 @@ function HowToGetStarted() {
           </span>
         </span>
       </div>
-      <div className="pl-5 pr-5 mt-5 flex justify-center ">
+      <div className="pl-5 pr-5 mt-10 flex justify-center ">
         <div className="rounded-md max-w-200 flex flex-col">
           <span className="flex justify-center ">
             <h5 className="text-[1.1rem] text-center pb-2 pt-2 border-b-2 border-[#6e6e0696] font-semibold text-gray-100">

@@ -60,7 +60,7 @@ function Proof(props: VideoControls) {
             opportunities for marketers worldwide.
           </h5>
         </span>
-        <div className=" flex justify-center mt-5">
+        <div className=" flex justify-center mt-10">
           <div className="bg-[#07078dde] rounded-md w-fit p-1 h-fit">
             <span className="flex justify-center ">
               <h5 className="text-[1.1rem] pb-2 pt-2 border-b-2 border-[#6e6e0696] font-semibold text-gray-100">
