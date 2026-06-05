@@ -1,19 +1,35 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Spinner from "../Spinner";
 import courseImg from "/images/course.png";
 import whatIsAffilateMarketing from "/images/what-is-affiliate-marketing.webp";
 function HowToGetStarted() {
   const urlNavigator = useNavigate();
   const [isLoading, setIsloading] = useState<boolean>(false);
+  const buyDivRef = useRef<HTMLDivElement | null>(null);
   function getEmail() {
     setIsloading(true);
     const url = "/email/access";
     urlNavigator(url, { replace: false });
   }
+  function toPurchase() {
+    if (!buyDivRef.current) return;
+    buyDivRef.current.scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <>
       <div className=" transition-opacity">{isLoading && <Spinner />}</div>
+      <div className="fixed  bottom-30   h-0 flex justify-center w-full">
+        <span className="pl-5 pr-5  flex w-full max-w-200 relative justify-end h-0 ">
+          <span
+            className=" flex gap-2 items-center absolute z-10 -mt-10 p-3 h-fit w-fit  rounded-full cursor-pointer text-gray-200  bg-blue-500 hover:bg-blue-600  font-bold "
+            onClick={toPurchase}
+          >
+            <h5 className="text-[1.3rem] ">Get DMG</h5>
+            <i className="fa fa-shopping-cart text-[1.5rem]"></i>
+          </span>
+        </span>
+      </div>
       <div className="pl-5 pr-5 mt-5 flex justify-center ">
         <div className="rounded-md max-w-200 flex flex-col">
           <span className="flex justify-center ">
@@ -39,8 +55,11 @@ function HowToGetStarted() {
               start your journey with confidence.
             </h5>
           </span>
-          <div className="bg-[#07078dde] w-full flex justify-center rounded-md mt-5  p-1 h-fit">
-            <div className="w-full flex flex-col sm:flex-row sm:gap-4 ">
+          <div
+            className="bg-[#07078dde] w-full flex justify-center rounded-md mt-5  p-1 h-fit"
+            ref={buyDivRef}
+          >
+            <div className="w-full  flex flex-col sm:flex-row sm:gap-4 ">
               <div className="bg-white border-2 rounded-md sm:w-[50%]">
                 <span className="w-full h-full block max-h-95">
                   <img
@@ -48,18 +67,19 @@ function HowToGetStarted() {
                     src={courseImg}
                   ></img>
                 </span>
-                <span className="w-full h-fit   pb-3 flex gap-2  pl-3 pr-3  mt-2">
-                  <span className="w-full border-2 flex flex-col justify-center items-center text-[1.5rem]   font-bold py-4 rounded-lg text-xl">
-                    <h5>No longer</h5>
-                    <h5 className="line-through ml-2 "> ₦7,500</h5>
+                <span className="w-full h-22   pb-3 flex gap-2  pl-3 pr-3  mt-2">
+                  <span className="w-full border-2 h-19 flex flex-col justify-center items-center text-[1.5rem]   font-bold py-4 rounded-lg text-xl">
+                    <h5 className="line-through ml-2 text-red-400"> ₦7,000</h5>
                   </span>
-                  <button
-                    className="w-full CTAShake  CTAShake-shadow text-gray-50  bg-blue-500 hover:bg-blue-600  font-bold py-4 rounded-lg text-xl"
-                    onClick={getEmail}
-                  >
-                    <h5>Get Access</h5>
-                    <h5>₦3,500</h5>
-                  </button>
+                  <span className="w-full ">
+                    <button
+                      className="w-full CTAShake  h-19 CTAShake-shadow flex flex-col justify-center text-gray-50  bg-blue-500 hover:bg-blue-600  font-bold py-4 rounded-lg text-xl"
+                      onClick={getEmail}
+                    >
+                      <h5>Get Access</h5>
+                      <h5>₦3,500</h5>
+                    </button>
+                  </span>
                 </span>
               </div>
               <div className=" mt-3 sm:mt-0 bg-white sm:w-[50%] rounded-md ">

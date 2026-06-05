@@ -75,7 +75,7 @@ function Proof(props: VideoControls) {
                 generating income by promoting digital products.
               </h5>
             </span>
-            <div className="flex gap-2 flex-wrap sm:grid sm:grid-cols-2 mt-3">
+            <div className="flex gap-5 flex-wrap sm:grid sm:grid-cols-2 mt-3">
               <span className="w-full h-full">
                 <img className="w-full h-full" src={proof6}></img>
               </span>
@@ -93,14 +93,14 @@ function Proof(props: VideoControls) {
                     onClick={props.playVideo1}
                     ref={props.playRef1}
                   >
-                    <span className="fa fa-play text-[3rem] text-[#d4d4d49f]  "></span>
+                    <span className="fa fa-play text-[3rem] text-[#9b99999f]  "></span>
                   </span>
                   <span
                     className="w-full h-full  flex justify-center items-center pointer-none  transition-all"
                     onClick={props.pauseVideo1}
                     ref={props.pauseRef1}
                   >
-                    <span className="fa fa-pause text-[3rem] text-[#d4d4d49f]  "></span>
+                    <span className="fa fa-pause text-[3rem] text-[#9b99999f]  "></span>
                   </span>
                 </div>
               </div>
@@ -130,14 +130,14 @@ function Proof(props: VideoControls) {
                     onClick={props.playVideo2}
                     ref={props.playRef2}
                   >
-                    <span className="fa fa-play text-[3rem] text-[#d4d4d49f]  "></span>
+                    <span className="fa fa-play text-[3rem] text-[#9b99999f]  "></span>
                   </span>
                   <span
                     className="w-full h-full  flex justify-center items-center pointer-none  transition-all"
                     onClick={props.pauseVideo2}
                     ref={props.pauseRef2}
                   >
-                    <span className="fa fa-pause text-[3rem] text-[#d4d4d49f]  "></span>
+                    <span className="fa fa-pause text-[3rem] text-[#9b99999f]  "></span>
                   </span>
                 </div>
               </div>

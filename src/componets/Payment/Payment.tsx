@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 import Spinner from "../Spinner";
 type ServerPaymentResponds = {
@@ -16,6 +16,11 @@ function Payment() {
   const [sec, setSec] = useState<number>(59);
   const [isValidated, setIsValidated] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
+  const [isTransferReady, setIsTransferReady] = useState<boolean>(false);
+  const accName = useRef<HTMLHeadingElement | null>(null);
+  const bankName = useRef<HTMLHeadingElement | null>(null);
+  const accountNum = useRef<HTMLHeadingElement | null>(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setSec((prevSec) => {
@@ -32,7 +37,6 @@ function Payment() {
   }, [isValidated]);
   useEffect(() => {
     if (sec === 0) {
-      console.log("- 1min");
       setMin((prevMin) => (prevMin = prevMin - 1));
     }
   }, [sec]);
@@ -91,6 +95,20 @@ function Payment() {
       toast.error(`Found :error`);
     }
   }
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsTransferReady(true);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
+  useEffect(() => {
+    if (isTransferReady) {
+      if (!accName.current || !bankName.current || !accountNum.current) return;
+      accName.current.classList.remove("loading-sekeleton");
+      bankName.current.classList.remove("loading-sekeleton");
+      accountNum.current.classList.remove("loading-sekeleton");
+    }
+  }, [isTransferReady]);
   return (
     <>
       <div className=" transition-opacity">{isLoading && <Spinner />}</div>
@@ -127,20 +145,35 @@ function Payment() {
                       <div className="flex flex-col gap-4 text-[1.2rem] font-medium">
                         <span className="text-center">
                           <h5 className="font-bold">Account Name</h5>
-                          <h5 className="mt-0.5">Victory Nwanoruo</h5>
+                          {isTransferReady ? (
+                            <h5 className="mt-0.5 ">Victory Nwanoruo</h5>
+                          ) : (
+                            <h5 className="mt-0.5 loading-sekeleton h-4"></h5>
+                          )}
                         </span>
-                        <span className="text-center">
+                        <span className="text-center ">
                           <h5 className="font-bold">Bank Name</h5>
-                          <h5 className="mt-0.5">Opay</h5>
+                          {isTransferReady ? (
+                            <h5 className="mt-0.5 ">Opay</h5>
+                          ) : (
+                            <h5 className="mt-0.5 loading-sekeleton h-4"></h5>
+                          )}
                         </span>
                         <span className="text-center">
                           <h5 className="font-bold">Account Number</h5>
                           <span className="flex justify-center items-center ">
-                            <h5 className="mt-0.5">9034154937</h5>
-                            <i
-                              className="fa fa-link ml-2 text-blue-500"
-                              onClick={copyFunction}
-                            ></i>
+                            {isTransferReady ? (
+                              <>
+                                {" "}
+                                <h5 className="mt-0.5">9034154937</h5>
+                                <i
+                                  className="fa fa-link ml-2 text-blue-500"
+                                  onClick={copyFunction}
+                                ></i>{" "}
+                              </>
+                            ) : (
+                              <h5 className="mt-2 w-full h-4 loading-sekeleton"></h5>
+                            )}
                           </span>
                         </span>
                         <span className="flex justify-center gap-1 mt-2">

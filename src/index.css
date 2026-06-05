@@ -27,13 +27,9 @@ body {
   animation-delay: 3s;
 }
 @keyframes shake {
-  25% {
-    transform: translateX(-107%);
+  55% {
     background-color: rgba(234, 234, 238, 0.11);
-    color: rgba(255, 255, 255, 0.082);
-  }
-  90% {
-    transform: translateX(0);
+    color: rgb(13, 173, 13);
   }
 }
 .spinner {
@@ -66,5 +62,17 @@ body {
   }
   to {
     transform: rotate(1turn);
+  }
+}
+.loading-sekeleton {
+  animation: sekelecton 1s ease-in infinite;
+  transition: all;
+}
+@keyframes sekelecton {
+  0% {
+    background-color: #d8d4d4;
+  }
+  10% {
+    background-color: #a7a5a5;
   }
 }

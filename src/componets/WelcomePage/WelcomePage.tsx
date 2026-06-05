@@ -1,5 +1,4 @@
 import Head from "./Head";
-
 import HowToGetStarted from "./HowToGetStarted";
 import AboutMe from "./AboutMe";
 import Footer from "./Footer";

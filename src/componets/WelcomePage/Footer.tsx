@@ -32,7 +32,6 @@ function Footer() {
             </h5>
           </span>
         </div>
-
         <div className="flex justify-center mt-4">
           <span className="flex flex-col gap-2 mt-2 text-gray-200  text-[0.7rem] sm:text-[1.2rem]">
             <h5>
