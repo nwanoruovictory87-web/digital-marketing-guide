@@ -111,7 +111,6 @@ function WelcomePage() {
     const randomIndex = Math.floor(Math.random() * 20);
     let index = randomIndex;
     let length = mockedEmails.length;
-    console.log(length);
     const interval = setInterval(() => {
       if (index !== length || index < length) {
         const paidEmailMassage = `${mockedEmails[index]} just grabbed the DMG`;

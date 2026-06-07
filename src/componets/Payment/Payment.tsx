@@ -109,6 +109,13 @@ function Payment() {
       accountNum.current.classList.remove("loading-sekeleton");
     }
   }, [isTransferReady]);
+  function cancelPayment() {
+    setIsValidated(true);
+    setIsloading(true);
+    setTimeout(() => {
+      urlNavigator("/", { replace: true });
+    }, 3000);
+  }
   return (
     <>
       <div className=" transition-opacity">{isLoading && <Spinner />}</div>
@@ -197,7 +204,15 @@ function Payment() {
                       className="w-full h-fit border-2 border-blue-500 pt-2 pb-2 bg-blue-500 rounded-md text-gray-100 font-bold text-[1.2rem]"
                       onClick={validatePayment}
                     >
-                      I've sent the money
+                      I've made the transfer
+                    </button>
+                  </span>
+                  <span className="flex justify-center mt-5">
+                    <button
+                      className="w-full h-fit border-2 border-red-500 pt-2 pb-2  rounded-md text-red-500 font-bold text-[1.2rem]"
+                      onClick={cancelPayment}
+                    >
+                      cancel payment
                     </button>
                   </span>
                 </div>
